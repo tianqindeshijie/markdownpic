@@ -50,7 +50,7 @@ develop分支是开发过程中代码中心分支。与master 分支一样，这
 **Hotfix分支**
 ![enter image description here](https://raw.githubusercontent.com/tianqindeshijie/markdownpic/master/git_flow_introduction/5.png)
 当我们在Master发现新的Bug时候，我们需要创建一个Hotfix, 完成Hotfix后，我们合并回Master和Develop分支，所以Hotfix的改动会进入下一个Release。Hotfix开发完后需要合并回Master和Develop分支，同时在Master上打一个tag。下述情况需要创建 Hotfix分支：
-- release 版本中发现了bug 或者漏洞
+- Master版本中发现了bug 或者漏洞
 - develop 分支正在开发新功能，无法面向用户进行发布
 - 漏洞需要及早处理，无法等到下一次版本发布
 
@@ -162,5 +162,7 @@ idea的git flow插件安装非常简单，可以直接在idea的插件库里面�
 git flow指定了一个使用Git的工作模式，然后每个团队的情况都不尽相同，所以根据根据Git Flow在制定一套适合我们团队使用的规范才是最终的目标。下面就是指定团队内部一些约定规范（规范会根据大家的使用情况持续更新，大家可以不断的提出意见，直到非常稳定为止）：
 
 1. master分支是主分支一直保持稳定，任何开发人员不允许直接往这个分支提交代码，只允许往这个分支发起merge request，只允许release分支和hotfix分支进行合流
-2. 新功能的开发可以几个协同开发的人员公用一个feature分支，这样方便统一调试，避免了一直合并的问题。
-3. 所有最后需要合并到master的分支必须做交叉的代码走查（code review），提高协同开发人员的代码交流，及时发现不合理的代码和问题。
+2. develop下也不能直接提交开发代码，只允许feature分支和hotfix分支通过merge的方式合并代码。
+3. 新功能的开发可以几个协同开发的人员公用一个feature分支，这样方便统一调试，避免了一直合并的问题。
+4. 所有最后需要合并到master的分支必须做交叉的代码走查（code review），提高协同开发人员的代码交流，及时发现不合理的代码和问题。
+5.
